@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Management</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Stock Management</h2>
+    <form id="stockForm" enctype="multipart/form-data">
+        <input type="text" name="category" id="category" placeholder="Category" required><br>
+        <input type="text" name="name" id="name" placeholder="Product Name" required><br>
+        <input type="number" name="price" id="price" placeholder="Price" step="0.01" required><br>
+        <input type="file" name="image" id="image" accept="image/*" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#stockForm").submit(function(e) {
+                e.preventDefault();
+
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: "upload.php",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        alert(response);
+                        $("#stockForm")[0].reset();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
