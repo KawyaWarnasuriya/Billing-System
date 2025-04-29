@@ -43,6 +43,14 @@ A dynamic and responsive **Cloud-Based Billing System** that allows users to man
 - **Frontend:** HTML, CSS, JavaScript, jQuery
 - **Backend:** PHP, MySQL
 - **Database:** MySQL
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="50" width="50" style="border-radius:10px; padding:5px; margin:5px; background:#f4f4f4"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="50" width="50" style="border-radius:10px; padding:5px; margin:5px; background:#f4f4f4"/>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Unofficial_JavaScript_logo_2.svg" height="50" width="50" style="border-radius:10px; padding:5px; margin:5px; background:#ffffff"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" height="50" width="50" style="border-radius:10px; padding:5px; margin:5px; background:#f4f4f4"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="50" width="50" style="border-radius:10px; padding:5px; margin:5px; background:#f4f4f4"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="50" width="50" style="border-radius:10px; padding:5px; margin:5px; background:#f4f4f4"/>
+</p>
   
 
 ## 📸 Screenshots
