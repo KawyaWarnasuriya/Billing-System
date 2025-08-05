@@ -5,38 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Management</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="images" href="assets/">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 50px;
+            margin: 0;
+            padding: 0;
+            background-image: url('assets/background.jpg'); /* change bg.jpg to your background image name */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
         }
+
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100vh;
+            padding-right: 100px;
+        }
+
         form {
+            background-color: rgba(255, 255, 255, 0.9);
             width: 300px;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
+
         input, button {
             width: 100%;
             margin: 10px 0;
             padding: 8px;
         }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .header h2 {
+            color: purple;
+            margin: 0;
+        }
+        
     </style>
 </head>
 <body>
 
-    <h2>Stock Management</h2>
-    <form id="stockForm" enctype="multipart/form-data">
-        <input type="text" name="category" id="category" placeholder="Category" required><br>
-        <input type="text" name="name" id="name" placeholder="Product Name" required><br>
-        <input type="number" name="price" id="price" placeholder="Price" step="0.01" required><br>
-        <input type="file" name="image" id="image" accept="image/*" required><br>
-        <button type="submit">Submit</button>
-    </form>
+    <!-- Header with Logo -->
+    <div class="header">
+        <img src="assets/logo.png" alt="Logo"> <!-- change logo.png to your logo file -->
+        <h2>Stock Management in KS Products </h2>
+    </div>
+
+    <!-- Form on right center -->
+    <div class="container">
+        <form id="stockForm" enctype="multipart/form-data">
+            <h3>Add New Product</h3>
+            <input type="text" name="category" id="category" placeholder="Category" required><br>
+            <input type="text" name="name" id="name" placeholder="Product Name" required><br>
+            <input type="number" name="price" id="price" placeholder="Price" step="0.01" required><br>
+            <input type="file" name="image" id="image" accept="image/*" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
     <script>
-        $(document).ready(function() {
-            $("#stockForm").submit(function(e) {
+        $(document).ready(function () {
+            $("#stockForm").submit(function (e) {
                 e.preventDefault();
 
                 var formData = new FormData(this);
@@ -47,7 +94,7 @@
                     data: formData,
                     contentType: false,
                     processData: false,
-                    success: function(response) {
+                    success: function (response) {
                         alert(response);
                         $("#stockForm")[0].reset();
                     }
